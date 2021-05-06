@@ -226,7 +226,7 @@ void ILI9341_DrawText(const char* str, const uint8_t font[], uint16_t X, uint16_
 {
 	uint8_t charWidth;			/* Width of character */
 	uint8_t fOffset = font[0];	/* Offset of character */
-	uint8_t fWidth = font[1]*2;	/* Width of font */
+	uint8_t fWidth = font[1];	/* Width of font */
 
 	while (*str)
 	{
@@ -257,8 +257,8 @@ void ILI9341_DrawChar(char ch, const uint8_t font[], uint16_t X, uint16_t Y, uin
 	uint8_t *tempChar;
 
 	fOffset = font[0];
-	fWidth = font[1]*2;
-	fHeight = font[2]*2;
+	fWidth = font[1];
+	fHeight = font[2];
 	fBPL = font[3];
 
 	tempChar = (uint8_t*)&font[((ch - 0x20) * fOffset) + 4]; /* Current Character = Meta + (Character Index * Offset) */
